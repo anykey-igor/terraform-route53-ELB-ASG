@@ -1,14 +1,14 @@
 resource "aws_security_group" "alb" {
     name = "terraform-alb-security-group"
 
-    # Разрешить входящие HTTP
+    # Allowing all incoming HTTP
     ingress {
     from_port = 80
     to_port = 80
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
     }
-    # Разрешить все исходящие
+    # Allow all outgoing
     egress {
     from_port = 0
     to_port = 0
